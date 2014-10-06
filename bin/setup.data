@@ -1,0 +1,50 @@
+# Binaries
+binaries=(
+  python
+#  sshfs
+  trash
+  node
+  tree
+  ack
+  git
+)
+
+# Apps
+apps=(
+  alfred
+  dropbox
+  google-chrome
+  qlcolorcode
+  #screenflick		# screen recorder
+  #slack
+  transmit
+  appcleaner
+  #hazel
+  qlmarkdown
+  spotify
+  #vagrant
+  #arq
+  flash
+  iterm2
+  qlprettypatch
+  #shiori
+  sublime-text3
+  virtualbox
+  #atom
+  flux
+  #mailbox
+  qlstephen
+  sketch
+  tower
+  quicklook-json
+  skype
+  utorrent
+  textmate
+)
+
+# fonts
+fonts=(
+  font-m-plus
+  font-clear-sans
+  font-roboto
+)

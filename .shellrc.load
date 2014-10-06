@@ -11,3 +11,8 @@ pushd ~/utils > /dev/null
 popd > /dev/null
 
 export PROMPT_COMMAND="history -a;"$PROMPT_COMMAND
+
+export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
+
+export MANPATH=$(brew --prefix coreutils)/libexec/gnuman:$MANPATH
+
