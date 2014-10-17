@@ -10,9 +10,12 @@ pushd ~/utils > /dev/null
 	source load.sh
 popd > /dev/null
 
+# Enable zsh completion for git
+# This allows git-completion to work properly
+autoload -U compinit && compinit
+
 export PROMPT_COMMAND="history -a;"$PROMPT_COMMAND
 
-export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
+export PATH=~/bin:$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH
 
 export MANPATH=$(brew --prefix coreutils)/libexec/gnuman:$MANPATH
-
