@@ -17,18 +17,36 @@ brew tap caskroom/versions
 # In order to enable this, you'll need to tap the fonts cask:
 brew tap caskroom/fonts
 
-# Install GNU core utilities (those that come with OS X are outdated)
-brew install coreutils
-# Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
-brew install findutils
-# Install Bash 4
-brew install bash
-
 # Install more recent versions of some OS X tools
 brew tap homebrew/dupes
 brew tap homebrew/versions
 
-brew install homebrew/dupes/grep
+# Install GNU core utilities (those that come with OS X are outdated)
+brew install coreutils
+# Install Bash 4
+brew install bash
+brew install binutils
+brew install diffutils
+brew install ed --default-names
+# Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
+brew install findutils --default-names
+brew install gawk
+brew install gnu-indent --default-names
+brew install gnu-sed --default-names
+brew install gnu-tar --default-names
+brew install gnu-which --default-names
+brew install gnutls --default-names
+brew install grep --default-names
+brew install gzip
+brew install screen
+brew install watch
+brew install wdiff --with-gettext
+brew install wget
+brew install gpatch
+brew install m4
+brew install make
+brew install git
+brew install less
 
 # Update homebrew recipes
 brew update
@@ -65,3 +83,6 @@ echo "Disabling the warning when changing a file extension"
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 echo "Avoiding the creation of .DS_Store files on network volumes"
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+
+# git setup
+. git_setup.sh
