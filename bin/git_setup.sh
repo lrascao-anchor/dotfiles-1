@@ -13,7 +13,7 @@ git config --global core.excludesfile '~/.gitignore'
 
 # a better git log
 # https://coderwall.com/p/euwpig
-git config --global alias.l \
+git config --global alias.ls \
 	"log --color --graph --pretty=format:'%Cred%h%Creset \
 	 -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' \
 	 --abbrev-commit"
