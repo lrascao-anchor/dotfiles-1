@@ -1,3 +1,4 @@
-alias dir="ls -lisaF"
-alias joe="sublime"
-alias g="git"
+alias dir='ls -lisaF'
+alias joe='sublime'
+alias g='git'
+alias ghome='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`'
