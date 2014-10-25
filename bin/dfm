@@ -12,10 +12,11 @@ use File::Copy;
 use File::Basename;
 use Pod::Usage;
 
-our $VERSION = 'v0.7.1';
+our $VERSION = 'v0.7.2';
 
 my %opts;
 my $shellrc_filename;
+my $shellrc_load_filename;
 my $repo_dir;
 my $home;
 
@@ -162,7 +163,7 @@ sub run_dfm {
         }
 
         if ( !$repo_dir ) {
-            ERROR( "unable to discover dotfiles repo and dfm is running from its own repo" );
+            ERROR("unable to discover dotfiles repo and dfm is running from its own repo");
             exit(-2);
         }
     }
@@ -175,14 +176,14 @@ sub run_dfm {
     DEBUG("Repo dir: $repo_dir");
 
     # extract the shell name from env
-    my $shell = basename($ENV{SHELL});
-    $shellrc_filename = '.'.$shell.'rc';
+    my $shell = basename( $ENV{SHELL} );
+    $shellrc_filename = '.' . $shell . 'rc';
 
     DEBUG("Shell: $shell, Shell RC filename: $shellrc_filename");
 
     # shellrc in MacOS is ~/.profile
-    if ( lc($OSNAME) eq 'darwin' and $shell eq 'bash') {
-            $shellrc_filename = '.profile';
+    if ( lc($OSNAME) eq 'darwin' and $shell eq 'bash' ) {
+        $shellrc_filename = '.profile';
     }
 
     if ( exists $commands->{$command} ) {
@@ -201,6 +202,30 @@ sub run_dfm {
 
         # assume it's a git command and call accordingly
         _run_git(@argv);
+    }
+}
+
+sub my_symlink {
+    my $target = shift;
+    my $link   = shift;
+        
+    if ($^O eq "cygwin")
+    {           
+        my $flags = "";
+        if (-d $target) { $flags = "/D" };
+
+        $target = `cygpath -w $target`;
+        $link   = `cygpath -w $link`;
+        
+        chomp $target;
+        chomp $link;
+
+        my $command = "cmd /c mklink $flags \"$link\" \"$target\"";
+        system($command);
+    }
+    else
+    {
+        symlink($target,$link);
     }
 }
 
@@ -285,7 +310,7 @@ sub merge_and_install {
 
             # if a decision wasn't made about how to deal with local commits
             if ( !$opts->{'merge'} && !$opts->{'rebase'} ) {
-                WARN( "local changes detected, run with either --merge or --rebase" );
+                WARN("local changes detected, run with either --merge or --rebase");
                 print $local_changes, "\n";
                 exit;
             }
@@ -312,8 +337,17 @@ sub install {
 
     install_files( _abs_repo_path( $home, $repo_dir ), $home );
 
+    $shellrc_load_filename = '';
+
     # link in the shell loader
     if ( -e _abs_repo_path( $home, $repo_dir ) . "/.shellrc.load" ) {
+        $shellrc_load_filename = '.shellrc.load';
+    }
+    elsif ( -e _abs_repo_path( $home, $repo_dir ) . "/.bashrc.load" ) {
+        $shellrc_load_filename = '.bashrc.load';
+    }
+
+    if ($shellrc_load_filename) {
         configure_shell_loader();
     }
 }
@@ -372,7 +406,7 @@ sub install_files {
                     if !$opts{'dry-run'};
             }
             INFO("  Symlinking $direntry ($symlink_base/$direntry).");
-            symlink( "$symlink_base/$direntry", "$direntry" )
+            my_symlink( "$symlink_base/$direntry", "$direntry" )
                 if !$opts{'dry-run'};
         }
     }
@@ -403,7 +437,7 @@ sub install_files {
             install_files( "$source_dir/$recurse", "$target_dir/$recurse", $recurse_options );
         }
         else {
-            WARN( "couldn't recurse into $source_dir/$recurse, not a directory" );
+            WARN("couldn't recurse into $source_dir/$recurse, not a directory");
         }
     }
 
@@ -440,9 +474,15 @@ sub configure_shell_loader {
     my $shellrc_contents = _read_shellrc_contents();
 
     # check if the loader is in
-    if ( $shellrc_contents !~ /\.shellrc\.load/ ) {
+    if ( $shellrc_contents !~ /$shellrc_load_filename/ ) {
         INFO("Appending loader to $shellrc_filename");
-        $shellrc_contents .= "\n. \$HOME/.shellrc.load\n";
+        $shellrc_contents .= "\n. \$HOME/$shellrc_load_filename\n";
+    }
+
+    # if the new loader filename (.shellrc.load) is used, but the old loader
+    # filename (.bashrc.load) is in the shell rc, remove it
+    if ( $shellrc_load_filename =~ m/shellrc/ && $shellrc_contents =~ /\.bashrc\.load/ ) {
+        $shellrc_contents =~ s{\n. \$HOME/\.bashrc\.load\n}{}gs;
     }
 
     _write_shellrc_contents($shellrc_contents);
@@ -495,7 +535,7 @@ sub uninstall_files {
             uninstall_files( "$source_dir/$recurse", "$target_dir/$recurse" );
         }
         else {
-            WARN( "couldn't recurse into $target_dir/$recurse, not a directory" );
+            WARN("couldn't recurse into $target_dir/$recurse, not a directory");
         }
     }
 }
@@ -642,7 +682,7 @@ sub cleanup_dangling_symlinks {
 
             DEBUG("target_base $target_base $source_dir");
             if ( $target_base eq $source_dir ) {
-                INFO( "  Cleaning up dangling symlink $direntry ($link_target)." );
+                INFO("  Cleaning up dangling symlink $direntry ($link_target).");
                 unlink($direntry) if !$opts{'dry-run'};
             }
         }
@@ -655,7 +695,7 @@ sub unconfigure_shell_loader {
     my $shellrc_contents = _read_shellrc_contents();
 
     # remove shell loader if found
-    $shellrc_contents =~ s{\n. \$HOME/.shellrc.load\n}{}gs;
+    $shellrc_contents =~ s{\n. \$HOME/$shellrc_load_filename\n}{}gs;
 
     _write_shellrc_contents($shellrc_contents);
 }
@@ -815,7 +855,7 @@ sub _load_dfminstall {
                 }
                 elsif ( $options[0] eq 'chmod' ) {
                     if ( !$options[1] ) {
-                        ERROR( "chmod option requires a mode (e.g. 0600) in $dfminstall_path" );
+                        ERROR("chmod option requires a mode (e.g. 0600) in $dfminstall_path");
                         exit 1;
                     }
                     if ( $options[1] !~ /^[0-7]{4}$/ ) {
