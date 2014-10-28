@@ -83,6 +83,10 @@ echo "Disabling the warning when changing a file extension"
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 echo "Avoiding the creation of .DS_Store files on network volumes"
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+echo "Disabling press-and-hold for special keys in favor of key repeat"
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+echo "Setting a blazingly fast keyboard repeat rate"
+defaults write NSGlobalDomain KeyRepeat -int 0
 
 # git setup
 . git_setup.sh
