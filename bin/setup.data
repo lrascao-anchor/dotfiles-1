@@ -39,6 +39,7 @@ apps=(
   skype
   utorrent
   textmate
+  graphviz
 )
 
 # fonts
