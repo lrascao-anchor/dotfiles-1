@@ -40,6 +40,8 @@ apps=(
   utorrent
   textmate
   graphviz
+  tmux
+  mackup
 )
 
 # fonts
