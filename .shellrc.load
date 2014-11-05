@@ -17,3 +17,7 @@ export PROMPT_COMMAND="history -a;"$PROMPT_COMMAND
 export PATH=~/bin:$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH
 
 export MANPATH=$(brew --prefix coreutils)/libexec/gnuman:$MANPATH
+
+# for awscli to work
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
