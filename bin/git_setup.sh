@@ -19,3 +19,6 @@ git config --global alias.ls \
 	 --abbrev-commit"
 
 git config --global core.editor "sublime -w"
+
+# Set git to use the osxkeychain credential helper
+git config --global credential.helper osxkeychain
