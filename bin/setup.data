@@ -42,6 +42,7 @@ apps=(
   graphviz
   docker
   boot2docker
+  tmux
 )
 
 # fonts

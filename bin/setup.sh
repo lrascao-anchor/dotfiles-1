@@ -93,3 +93,8 @@ defaults write NSGlobalDomain KeyRepeat -int 0
 
 # git setup
 . git_setup.sh
+
+# Install the `teamocil` Ruby gem
+gem install teamocil
+# Create your layout directory
+mkdir ~/.teamocil
