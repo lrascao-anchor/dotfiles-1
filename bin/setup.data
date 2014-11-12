@@ -40,6 +40,8 @@ apps=(
   utorrent
   textmate
   graphviz
+  docker
+  boot2docker
 )
 
 # fonts

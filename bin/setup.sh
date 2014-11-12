@@ -21,6 +21,9 @@ brew tap caskroom/fonts
 brew tap homebrew/dupes
 brew tap homebrew/versions
 
+# so that brew versions is available
+brew tap homebrew/boneyard
+
 # Install GNU core utilities (those that come with OS X are outdated)
 brew install coreutils
 # Install Bash 4
