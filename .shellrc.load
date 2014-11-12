@@ -23,4 +23,4 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # docker client shell env vars init
-$(boot2docker shellinit)
+#$(boot2docker shellinit)
