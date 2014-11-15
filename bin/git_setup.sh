@@ -19,6 +19,8 @@ git config --global alias.ls \
 	 --abbrev-commit"
 git config --global alias.st \
 	"status"
+git config --global alias.co \
+	"checkout"
 
 git config --global core.editor "sublime -w"
 
