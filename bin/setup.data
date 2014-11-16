@@ -40,8 +40,10 @@ apps=(
   utorrent
   textmate
   graphviz
-  tmux
   mackup
+  docker
+  boot2docker
+  tmux
 )
 
 # fonts

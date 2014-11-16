@@ -17,5 +17,12 @@ git config --global alias.ls \
 	"log --color --graph --pretty=format:'%Cred%h%Creset \
 	 -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' \
 	 --abbrev-commit"
+git config --global alias.st \
+	"status"
+git config --global alias.co \
+	"checkout"
 
 git config --global core.editor "sublime -w"
+
+# Set git to use the osxkeychain credential helper
+git config --global credential.helper osxkeychain
