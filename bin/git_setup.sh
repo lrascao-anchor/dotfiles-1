@@ -26,3 +26,9 @@ git config --global core.editor "sublime -w"
 
 # Set git to use the osxkeychain credential helper
 git config --global credential.helper osxkeychain
+
+# When referring directly to an object identifier, it is usually not necessary to
+# quote the entire 40-character hexadecimal SHA-1 value; any initial substring unique
+# to the current context will do. You can tell Git to abbreviate commit IDs generally with:
+git config --global log.abbrevCommit yes
+git config --global core.abbrev 8
