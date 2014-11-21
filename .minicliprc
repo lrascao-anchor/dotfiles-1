@@ -1,5 +1,4 @@
 
 # set protoc-gen-erlang bin in path so protoc erlang generation works
-PROTOC-GEN-ERLANG=~/Projects/protoc-gen-erlang
-export PATH=$PATH:$PROTOC-GEN-ERLANG
-
+PROTOC_GEN_ERLANG=~/Projects/protoc-gen-erlang/bin
+export PATH=$PATH:$PROTOC_GEN_ERLANG
