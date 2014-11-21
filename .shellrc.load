@@ -24,3 +24,6 @@ export LANG=en_US.UTF-8
 
 # docker client shell env vars init
 #$(boot2docker shellinit)
+
+# miniclip specific settings and paths
+source ~/.minicliprc
