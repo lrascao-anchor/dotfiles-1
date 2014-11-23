@@ -17,7 +17,7 @@ git config --global alias.ls \
 	"log --color --graph --pretty=format:'%Cred%h%Creset \
 	 -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' \
 	 --abbrev-commit"
-git config --global alias.st \
+git config --global alias.s \
 	"status"
 git config --global alias.co \
 	"checkout"
