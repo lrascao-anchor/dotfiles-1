@@ -1,0 +1,17 @@
+#!/bin/bash
+# extract current branch name
+BRANCH=$(git name-rev HEAD 2> /dev/null | awk "{ print \$2 }")
+# save the current branch changes
+git stash save --include-untracked branch-stash-$BRANCH
+# now checkout the target branch
+TARGET_BRANCH=$1
+git checkout $TARGET_BRANCH > /dev/null
+# check for stashes made from a previous switch-branch
+STASH=$(git stash list | grep branch-stash-$TARGET_BRANCH)
+TARGET_STASH_ID=$(echo $STASH | awk "{print \$1}" | sed s/://g)
+TARGET_STASH_NAME=$(echo $STASH | awk "{print \$4}" | sed s/://g)
+if [ "$TARGET_STASH_ID" != "" ]; then
+	echo "applying branch stash $TARGET_STASH_NAME"
+	git stash apply $TARGET_STASH_ID > /dev/null
+	git stash drop $TARGET_STASH_ID > /dev/null
+fi
