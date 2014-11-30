@@ -34,4 +34,7 @@ setopt HIST_EXPIRE_DUPS_FIRST  # allow dups, but expire old ones when I hit HIST
 setopt EXTENDED_HISTORY        # save timestamp and runtime information
 
 # miniclip specific settings and paths
-source ~/.minicliprc
+if [ -f ~/.minicliprc ];
+then
+	source ~/.minicliprc
+fi
