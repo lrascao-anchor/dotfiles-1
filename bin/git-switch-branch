@@ -1,6 +1,6 @@
 #!/bin/bash
 # extract current branch name
-BRANCH=$(git name-rev HEAD 2> /dev/null | awk "{ print \$2 }")
+BRANCH=$(git symbolic-ref --short HEAD)
 # save the current branch changes
 git stash save --include-untracked branch-stash-$BRANCH
 # now checkout the target branch
