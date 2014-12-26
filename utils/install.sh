@@ -7,3 +7,12 @@ git clone --quiet git@github.com:0xAX/git-cheat.git utils/git-cheat
 
 # oh my zsh
 git clone --quiet git://github.com/robbyrussell/oh-my-zsh.git utils/oh-my-zsh
+
+# zsh-syntax-highlighting
+git clone --quiet git@github.com:zsh-users/zsh-syntax-highlighting.git
+
+# zsh-history-substring-search
+git clone --quiet git://github.com/zsh-users/zsh-history-substring-search.git
+
+# zsh autosugestions
+git clone --quiet git://github.com/tarruda/zsh-autosuggestions
