@@ -14,7 +14,8 @@ autoload -U compinit && compinit
 
 export PROMPT_COMMAND="history -a;"$PROMPT_COMMAND
 
-export PATH=~/bin:$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH
+# set gnu tools ahead in the path so they are used instead of the mac ones
+export PATH=~/bin:$(brew --prefix coreutils)/libexec/gnubin:$(brew --prefix gnu-getopt)/bin:/usr/local/bin:$PATH
 
 export MANPATH=$(brew --prefix coreutils)/libexec/gnuman:$MANPATH
 
