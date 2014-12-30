@@ -21,7 +21,7 @@ plugins=(osx ruby)
 # source $ZSH/oh-my-zsh.sh
 
 # load up zsh-syntax-highlighting
-source ~/utils/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source ~/utils/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # load up zsh-history-substring-search
 source ~/utils/zsh-history-substring-search/zsh-history-substring-search.zsh
