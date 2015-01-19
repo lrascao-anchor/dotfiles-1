@@ -16,3 +16,6 @@ git clone --quiet git://github.com/zsh-users/zsh-history-substring-search.git
 
 # zsh autosugestions
 git clone --quiet git://github.com/tarruda/zsh-autosuggestions
+
+# Easy building and installing of Erlang/OTP instances
+git clone --quiet git://github.com/yrashk/kerl.git

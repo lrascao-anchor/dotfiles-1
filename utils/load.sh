@@ -46,3 +46,8 @@ bindkey -M vicmd 'j' history-substring-search-down
 # # use ctrl+t to toggle autosuggestions(hopefully this wont be needed as
 # # zsh-autosuggestions is designed to be unobtrusive)
 # bindkey '^T' autosuggest-toggle
+
+# add kerl to path
+export PATH=$PATH:~/utils/kerl
+# add kerl autocompletions
+fpath=(~/utils/kerl/zsh_completion $fpath)
