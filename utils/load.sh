@@ -51,3 +51,6 @@ bindkey -M vicmd 'j' history-substring-search-down
 export PATH=$PATH:~/utils/kerl
 # add kerl autocompletions
 fpath=(~/utils/kerl/zsh_completion $fpath)
+
+# add zsh-users's autocompletions
+fpath=(~/utils/zsh-completions/src $fpath)
