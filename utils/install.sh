@@ -22,3 +22,8 @@ git clone --quiet git://github.com/yrashk/kerl.git
 
 # Additional completion definitions for Zsh
 git clone --quiet git://github.com/zsh-users/zsh-completions.git
+
+# https://unbalancedparentheses.github.io/gut/
+wget https://github.com/unbalancedparentheses/gut/raw/master/bin/gut
+chmod +x ./gut
+sudo mv ./gut ~/bin
