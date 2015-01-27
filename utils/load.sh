@@ -57,3 +57,5 @@ fpath=(~/utils/zsh-completions/src $fpath)
 
 # add git-flow to path
 export PATH=$PATH:~/utils/gitflow
+# add git-flow's autocompletion
+source ~/utils/git-flow-completion/git-flow-completion.zsh

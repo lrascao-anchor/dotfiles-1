@@ -29,4 +29,6 @@ chmod +x ./gut
 sudo mv ./gut ~/bin
 
 # git flow
-git clone --quiet git://github.com/nvie/gitflow.git
+git clone --quiet git://github.com/petervanderdoes/gitflow.git
+# git flow completion
+git clone --quiet git://github.com/bobthecow/git-flow-completion
