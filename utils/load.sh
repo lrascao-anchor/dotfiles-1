@@ -54,3 +54,6 @@ fpath=(~/utils/kerl/zsh_completion $fpath)
 
 # add zsh-users's autocompletions
 fpath=(~/utils/zsh-completions/src $fpath)
+
+# add git-flow to path
+export PATH=$PATH:~/utils/gitflow

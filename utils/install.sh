@@ -27,3 +27,6 @@ git clone --quiet git://github.com/zsh-users/zsh-completions.git
 wget https://github.com/unbalancedparentheses/gut/raw/master/bin/gut
 chmod +x ./gut
 sudo mv ./gut ~/bin
+
+# git flow
+git clone --quiet git://github.com/nvie/gitflow.git
