@@ -1,0 +1,10 @@
+#!/usr/bin/env escript
+
+loop() ->
+	timer:sleep(5 * 1000),
+	loop().
+
+main([CrashDumpFile]) ->
+	crashdump_viewer:start(CrashDumpFile),
+	loop(),
+	ok.
