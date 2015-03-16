@@ -2,3 +2,6 @@
 # set protoc-gen-erlang bin in path so protoc erlang generation works
 PROTOC_GEN_ERLANG=~/Projects/protoc-gen-erlang/bin
 export PATH=$PATH:$PROTOC_GEN_ERLANG
+
+# activate the erlang version
+. ~/Projects/erlang/17.4-hipe/activate
