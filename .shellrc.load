@@ -39,3 +39,8 @@ if [ -f ~/.minicliprc ];
 then
 	source ~/.minicliprc
 fi
+
+# configure oh-my-zsh
+source ~/.oh-my-zsh.rc
+# load up oh-my-zsh
+source ~/utils/oh-my-zsh/oh-my-zsh.sh
