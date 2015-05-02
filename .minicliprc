@@ -5,3 +5,18 @@ export PATH=$PATH:$PROTOC_GEN_ERLANG
 
 # activate the erlang version
 . ~/Projects/erlang/17.4-hipe/activate
+
+case $ITERM_SESSION_ID in
+  w0t0p0)
+     cd ~/Miniclip/hockey-server
+     ;;
+  w0t0p1)
+     cd ~/Projects/redis
+     ;;
+  w0t0p2)
+     cd ~/Projects/web_server
+     ;;
+  w0t0p3)
+     cd ~/Projects/dynamoDB
+     ;;
+esac
