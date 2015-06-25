@@ -15,10 +15,10 @@ ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 DISABLE_AUTO_UPDATE="true"
-plugins=(osx ruby)
+plugins=(osx ruby per-directory-history)
 
 # load up oh my zsh
-# source $ZSH/oh-my-zsh.sh
+source $ZSH/oh-my-zsh.sh
 
 # load up zsh-syntax-highlighting
 # source ~/utils/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
