@@ -33,6 +33,7 @@ HISTSIZE=1000000000            # lines of history to maintain memory
 SAVEHIST=$HISTSIZE             # lines of history to maintain in history file.
 setopt HIST_EXPIRE_DUPS_FIRST  # allow dups, but expire old ones when I hit HISTSIZE
 setopt EXTENDED_HISTORY        # save timestamp and runtime information
+setopt no_share_history        # do not share history between terminal windows
 
 # miniclip specific settings and paths
 if [ -f ~/.minicliprc ];
