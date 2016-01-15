@@ -3,6 +3,9 @@
 PROTOC_GEN_ERLANG=~/Projects/protoc-gen-erlang/bin
 export PATH=$PATH:$PROTOC_GEN_ERLANG
 
+export PATH=/Developer/NVIDIA/CUDA-5.5/bin:$PATH
+export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-5.5/lib:$DYLD_LIBRARY_PATH
+
 # activate the erlang version
 . ~/Projects/erlang/17.4-hipe/activate
 
