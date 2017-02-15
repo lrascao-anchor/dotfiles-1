@@ -6,19 +6,19 @@ source liquidprompt/liquidprompt
 export PATH=$PATH:`pwd`/git-cheat
 
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/utils/oh-my-zsh
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+# export ZSH=$HOME/utils/oh-my-zsh
+# # Set name of the theme to load.
+# # Look in ~/.oh-my-zsh/themes/
+# # Optionally, if you set this to "random", it'll load a random theme each
+# # time that oh-my-zsh is loaded.
+# ZSH_THEME="robbyrussell"
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-DISABLE_AUTO_UPDATE="true"
-plugins=(osx ruby)
+# # Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
+# plugins=(osx ruby)
 
 # load up oh my zsh
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
 
 # load up zsh-syntax-highlighting
 # source ~/utils/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -59,3 +59,6 @@ fpath=(~/utils/zsh-completions/src $fpath)
 export PATH=$PATH:~/utils/gitflow
 # add git-flow's autocompletion
 source ~/utils/git-flow-completion/git-flow-completion.zsh
+
+# add auto completion
+source ~/utils/zsh-autosuggestions/zsh-autosuggestions.zsh

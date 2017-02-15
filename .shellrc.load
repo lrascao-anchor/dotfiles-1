@@ -1,9 +1,12 @@
 # include what you want
 
+# optional load time profiling
+source ~/.profiling
+
 # load all alias
 source ~/.alias
 
-# load all utils
+# load all utils (heavy operation)
 pushd ~/utils > /dev/null
 	source load.sh
 popd > /dev/null
@@ -15,12 +18,17 @@ autoload -U compinit && compinit
 export PROMPT_COMMAND="history -a;"$PROMPT_COMMAND
 
 # set gnu tools ahead in the path so they are used instead of the mac ones
-export PATH=~/bin:$(brew --prefix coreutils)/libexec/gnubin:$(brew --prefix gnu-getopt)/bin:/usr/local/bin:$PATH
-
-export MANPATH=$(brew --prefix coreutils)/libexec/gnuman:$MANPATH
+# the following vars are an optimization, instead of calling the brew command
+# which is really slow
+# $(brew --prefix coreutils)
+GNU_COREUTILS=/usr/local/opt/coreutils
+# $(brew --prefix gnu-getopt) 
+GNU_GETOPT=/usr/local/opt/gnu-getopt
+export PATH=~/bin:$GNU_COREUTILS/libexec/gnubin:$GNU_GETOPT/bin:/usr/local/bin:$HOME/.cargo/bin:$HOME/Projects/alacritty/target/release:$PATH
+export MANPATH=$GNU_COREUTILS/libexec/gnuman:$MANPATH
 
 # for awscli to work
-export LC_ALL=en_US.UTF-8
+export LC_ALL=en_US.UTF-7
 export LANG=en_US.UTF-8
 
 # docker client shell env vars init
@@ -45,3 +53,12 @@ fi
 source ~/.oh-my-zsh.rc
 # load up oh-my-zsh
 source ~/utils/oh-my-zsh/oh-my-zsh.sh
+
+# export NVM_DIR="/Users/luis.rascao/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR_DIR/nvm.sh"  # This loads nvm
+ 
+# added by travis gem
+[ -f /Users/luis.rascao/.travis/travis.sh ] && source /Users/luis.rascao/.travis/travis.sh
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
