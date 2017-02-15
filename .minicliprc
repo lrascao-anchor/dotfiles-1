@@ -23,3 +23,7 @@ case $ITERM_SESSION_ID in
      cd ~/Projects/dynamoDB
      ;;
 esac
+
+# put the redirect from aws to localhost in place
+#sudo ifconfig lo0 169.254.169.254 alias
+#echo "rdr pass inet proto tcp from any to any port 80 -> 127.0.0.1 port 8080" | sudo pfctl -ef -
