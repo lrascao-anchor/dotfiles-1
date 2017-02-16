@@ -28,7 +28,7 @@ export PATH=~/bin:$GNU_COREUTILS/libexec/gnubin:$GNU_GETOPT/bin:/usr/local/bin:$
 export MANPATH=$GNU_COREUTILS/libexec/gnuman:$MANPATH
 
 # for awscli to work
-export LC_ALL=en_US.UTF-7
+export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # docker client shell env vars init
