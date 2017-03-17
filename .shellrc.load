@@ -24,7 +24,8 @@ export PROMPT_COMMAND="history -a;"$PROMPT_COMMAND
 GNU_COREUTILS=/usr/local/opt/coreutils
 # $(brew --prefix gnu-getopt) 
 GNU_GETOPT=/usr/local/opt/gnu-getopt
-export PATH=~/bin:$GNU_COREUTILS/libexec/gnubin:$GNU_GETOPT/bin:$HOME/.cargo/bin:$HOME/Projects/alacritty/target/release:$PATH
+BREW_OPENSSH=/usr/local/opt/openssh
+export PATH=~/bin:$GNU_COREUTILS/libexec/gnubin:$GNU_GETOPT/bin:$HOME/.cargo/bin:$HOME/Projects/alacritty/target/release:$BREW_OPENSSH/bin:$PATH
 export MANPATH=$GNU_COREUTILS/libexec/gnuman:$MANPATH
 
 # for awscli to work
