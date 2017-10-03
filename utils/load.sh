@@ -62,3 +62,7 @@ source ~/utils/git-flow-completion/git-flow-completion.zsh
 
 # add auto completion
 source ~/utils/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# add zshell vim integration
+source ~/utils/zsh-vimto/zsh-vimto.zsh
+

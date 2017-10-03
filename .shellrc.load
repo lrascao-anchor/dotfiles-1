@@ -66,3 +66,6 @@ source ~/utils/oh-my-zsh/oh-my-zsh.sh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+# activate ESC trigger for zsh-vimto
+bindkey -v
+

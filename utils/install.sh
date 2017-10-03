@@ -32,3 +32,6 @@ sudo mv ./gut ~/bin
 git clone --quiet git://github.com/petervanderdoes/gitflow.git
 # git flow completion
 git clone --quiet git://github.com/bobthecow/git-flow-completion
+
+# zshell vim plugin
+git clone https://github.com/laurenkt/zsh-vimto.git
