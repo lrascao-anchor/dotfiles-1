@@ -78,4 +78,4 @@ bind generic <C-w><C-w> view-next
 bind generic y @bash -c "echo -n `echo %(commit) | cut -c 1-7` | reattach-to-user-namespace pbcopy" # copy (yank) commid hash to clipboard (truncated to 7 chars)
 bind generic Y @bash -c "echo -n %(commit) | reattach-to-user-namespace pbcopy" # copy (yank) commid hash to clipboard
 
-set mouse false
+# set mouse false
