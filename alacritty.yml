@@ -161,8 +161,7 @@ mouse:
   triple_click: { threshold: 300 }
 
 selection:
-  # semantic_escape_chars: ",│`|:\"' ()[]{}<>"
-  semantic_escape_chars: ",│`|:\"' (){}<>"
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>"
 
 hide_cursor_when_typing: false
 
@@ -322,5 +321,6 @@ key_bindings:
   - { key: Key9,     mods: Alt|Shift,     chars: "\x7d"                  }
   - { key: Key8,     mods: Alt,     chars: "\x5b"                        }
   - { key: Key9,     mods: Alt,     chars: "\x5d"                        }
-  - { key: Back,     mods: Command,     chars: "\x1b\x7f"                }
-
+  - { key: Back,     mods: Command, chars: "\x1b\x7f"                    }
+  - { key: Apostrophe,                chars: "\u007E"                    }  # tilde (~)
+  - { key: RBracket, mods: Shift,     chars: "\u0060"                    }  # grave accent (`)
