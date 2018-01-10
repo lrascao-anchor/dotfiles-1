@@ -322,5 +322,8 @@ key_bindings:
   - { key: Key8,     mods: Alt,     chars: "\x5b"                        }
   - { key: Key9,     mods: Alt,     chars: "\x5d"                        }
   - { key: Back,     mods: Command, chars: "\x1b\x7f"                    }
-  - { key: Apostrophe,                chars: "\u007E"                    }  # tilde (~)
-  - { key: RBracket, mods: Shift,     chars: "\u0060"                    }  # grave accent (`)
+  - { key: Apostrophe,              chars: "\u007E"                    }  # tilde (~)
+  - { key: Apostrophe, mods: Shift, chars: "\u005E"                   }  # caret (^)
+  - { key: RBracket, mods: Shift,   chars: "\u0060"                    }  # grave accent (`)
+  - { key: Key2,     mods: Alt,      chars: "\u0040"                    }  # commercial (`)
+
