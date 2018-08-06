@@ -1,15 +1,15 @@
 
 # clone liquid prompt
-git clone --quiet https://github.com:nojhan/liquidprompt.git utils/liquidprompt
+git clone --quiet https://github.com/nojhan/liquidprompt.git utils/liquidprompt
 
 # clone gitcheat
-git clone --quiet https://github.com:0xAX/git-cheat.git utils/git-cheat
+git clone --quiet https://github.com/0xAX/git-cheat.git utils/git-cheat
 
 # oh my zsh
 git clone --quiet https://github.com/robbyrussell/oh-my-zsh.git utils/oh-my-zsh
 
 # zsh-syntax-highlighting
-git clone --quiet https://github.com:zsh-users/zsh-syntax-highlighting.git
+git clone --quiet https://github.com/zsh-users/zsh-syntax-highlighting.git
 
 # zsh-history-substring-search
 git clone --quiet https://github.com/zsh-users/zsh-history-substring-search.git
