@@ -1,5 +1,8 @@
+# change dir to script dir
+pushd `dirname $0`
+
 # load up setup data
-. setup_data
+. setup.data
 
 # Check for Homebrew,
 # Install if we don't have it
@@ -98,3 +101,5 @@ defaults write NSGlobalDomain KeyRepeat -int 0
 gem install teamocil
 # Create your layout directory
 mkdir ~/.teamocil
+
+popd
