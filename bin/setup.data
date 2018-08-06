@@ -7,42 +7,44 @@ binaries=(
   tree
   ack
   git
+  tmux
+  vim
 )
 
 # Apps
 apps=(
-  dropbox
+  # dropbox
   google-chrome
-  qlcolorcode
+  # qlcolorcode
   #screenflick		# screen recorder
   #slack
-  transmit
+  # transmit
   appcleaner
   #hazel
-  qlmarkdown
+  # qlmarkdown
   spotify
-  vagrant
+  # vagrant
   #arq
-  flash
-  iterm2
-  qlprettypatch
+  # flash
+  # iterm2
+  # qlprettypatch
   #shiori
-  sublime-text3
-  virtualbox
+  # sublime-text3
+  # virtualbox
   #atom
   #flux
   #mailbox
-  qlstephen
-  sketch
-  tower
-  quicklook-json
+  # qlstephen
+  # sketch
+  # tower
+  # quicklook-json
   skype
   utorrent
-  textmate
-  graphviz
-  mackup
-  docker
-  boot2docker
+  # textmate
+  # graphviz
+  # mackup
+  # docker
+  # boot2docker
   tmux
 )
 
