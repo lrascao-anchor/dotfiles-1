@@ -15,17 +15,6 @@ bindkey -M emacs '^N' history-substring-search-down
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
-# # Setup zsh-autosuggestions
-# source ~/utils/zsh-autosuggestions/autosuggestions.zsh
-# # Enable autosuggestions automatically
-# zle-line-init() {
-#     zle autosuggest-start
-# }
-# zle -N zle-line-init
-# # use ctrl+t to toggle autosuggestions(hopefully this wont be needed as
-# # zsh-autosuggestions is designed to be unobtrusive)
-# bindkey '^T' autosuggest-toggle
-
 # add kerl to path
 export PATH=$PATH:~/utils/kerl
 # add kerl autocompletions
