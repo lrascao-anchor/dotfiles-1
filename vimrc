@@ -169,6 +169,11 @@ let g:airline_left_sep = ''
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline_right_sep = ''
+let g:airline_section_c = '%-0.32{getcwd()}\%t'
+let g:airline_section_x = ''
+let g:airline_section_y = ''
+let g:airline_section_error = ''
+let g:airline_section_warning = ''
 " }}}
 "
 " NerdTree {{{
