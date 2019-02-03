@@ -98,6 +98,7 @@ nnoremap gV `[v`]
 let mapleader=","
 " jk is escape
 inoremap jk <esc>
+vnoremap jk <esc>
 " toggle gundo
 nnoremap <leader>u :GundoToggle<CR>
 " Go to tab by number
