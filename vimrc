@@ -156,6 +156,7 @@ Plug 'maxboisvert/vim-simple-complete'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
 call plug#end()
 " }}}
 "
@@ -171,3 +172,33 @@ let g:airline_right_sep = ''
 " NerdTree {{{
 let NERDTreeShowHidden=1                " show hidden files in NERDtree
 " }}}
+"
+"
+" vim-surround {{{
+nmap <silent> "" :call Toggle_Surround('"')<cr>
+nmap <silent> '' :call Toggle_Surround('''')<cr>
+" }}}
+"
+" Helper functions
+"
+"
+" toggle surround of selection
+function! Toggle_Surround(char)
+  let pos = getcurpos()
+  let cur = col(".")
+  exe "norm! va".a:char
+  let start = col("v")
+  let end = col(".")
+  exe "norm! \<esc>"
+  call cursor(pos[1], pos[2])
+  if start <= cur && cur <= end && start != end
+    " inside quote :)
+    exe "norm ds".a:char
+    call cursor(pos[1], pos[2]-len(a:char))
+  else
+    " not inside a quote
+    " hapens when cur <= start or end <= cur_sol or cur == start == end
+    exe "norm ysiw".a:char
+    call cursor(pos[1], pos[2]+len(a:char))
+  endif
+endfunction
