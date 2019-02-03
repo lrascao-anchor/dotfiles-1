@@ -157,6 +157,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+Plug 'vim-erlang/vim-erlang-omnicomplete'
 call plug#end()
 " }}}
 "
