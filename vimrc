@@ -112,7 +112,9 @@ noremap <leader>7 7gt
 noremap <leader>8 8gt
 noremap <leader>9 9gt
 noremap <leader>0 :tablast<cr>
-
+" }}}
+"
+" Copy/Paste {{{
 " delete without yanking
 nnoremap <leader>d "_d
 vnoremap <leader>d "_d
@@ -120,6 +122,10 @@ vnoremap <leader>d "_d
 " replace currently selected text with default register
 " without yanking it
 vnoremap <leader>p "_dP
+
+" do not clobber default register on paste
+vnoremap p "0p
+vnoremap P "0P
 " }}}
 "
 " Tmux {{{
