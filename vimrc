@@ -96,9 +96,8 @@ nnoremap gV `[v`]
 "
 " Leader Shortcuts {{{
 let mapleader=","
-" jk is escape
+" jk is escape (only on insert mode)
 inoremap jk <esc>
-vnoremap jk <esc>
 " toggle gundo
 nnoremap <leader>u :GundoToggle<CR>
 " Go to tab by number
@@ -149,6 +148,10 @@ let g:ctrlp_working_path_mode = 0
 let g:ctrlp_custom_ignore = '\vbuild/|_build/|dist/|venv/|target/|\.(o|beam|swp|pyc|egg)$'
 " }}}
 "
+" Misc {{{
+" no delays, timeoutlen is used for mapping delays, and ttimeoutlen is used for key code delays
+set timeoutlen=300 ttimeoutlen=0
+" }}}
 "
 " Plugins below
 "
