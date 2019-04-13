@@ -92,7 +92,8 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 echo "Disabling press-and-hold for special keys in favor of key repeat"
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 echo "Setting a blazingly fast keyboard repeat rate"
-defaults write NSGlobalDomain KeyRepeat -int 0
+defaults write -g InitialKeyRepeat -int 10 # normal minimum is 15 (225 ms)
+defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
 
 # git setup
 . git_setup.sh
