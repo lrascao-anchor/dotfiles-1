@@ -127,6 +127,13 @@ vnoremap p "0p
 vnoremap P "0P
 " }}}
 "
+" Browsing with netrw {{{
+let g:netrw_banner = 0          " remove the banner
+let g:netrw_liststyle = 3       " tree style
+let g:netrw_browse_split = 3    " open files in a new tab
+let g:netrw_winsize = 25        " file explorer width percentage
+" }}}
+"
 " Tmux {{{
 " allows cursor change in tmux mode
 if exists('$TMUX')
