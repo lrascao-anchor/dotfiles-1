@@ -44,7 +44,6 @@ set autoindent			    " does nothing more than copy the indentation from the prev
 let loaded_matchparen = 1   " disable the default behaviour to match parenthesis when navigating
 set showcmd             	" show last command entered in bottom bar
 set nocursorline          	" highlight current line
-set wildmenu			    " it will provide a graphical menu of all the matches you can cycle through 
 set lazyredraw              " redraw only when we need to.
 set showmatch               " higlight matching parenthesis
 set mat=2                   " How many tenths of a second to blink when matching brackets
@@ -66,6 +65,8 @@ set noswapfile
 " }}}
 "
 " Searching {{{
+set path+=**                " Search down into subfolders, provides tab-completion for all file-related tasks
+set wildmenu			    " it will provide a graphical menu of all the matches you can cycle through 
 set ignorecase              " ignore case when searching
 set incsearch               " search as characters are entered
 set hlsearch                " highlight all matches
