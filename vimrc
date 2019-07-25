@@ -139,15 +139,6 @@ else
 endif
 " }}}
 "
-" CtrlP {{{
-" order matching files top to bottom
-let g:ctrlp_match_window = 'bottom,order:ttb'
-" always open files in new buffers
-let g:ctrlp_switch_buffer = 0
-let g:ctrlp_working_path_mode = 0
-let g:ctrlp_custom_ignore = '\vbuild/|_build/|dist/|venv/|target/|\.(o|beam|swp|pyc|egg)$'
-" }}}
-"
 " Misc {{{
 " no delays, timeoutlen is used for mapping delays, and ttimeoutlen is used for key code delays
 set timeoutlen=300 ttimeoutlen=0
@@ -160,14 +151,10 @@ set timeoutlen=300 ttimeoutlen=0
 call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'sjl/gundo.vim'
-Plug 'kien/ctrlp.vim'
 Plug 'maxboisvert/vim-simple-complete'
-Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
-Plug 'vim-erlang/vim-erlang-omnicomplete'
 Plug 'tommcdo/vim-exchange'
 call plug#end()
 " }}}
@@ -184,10 +171,6 @@ let g:airline_section_x = ''
 let g:airline_section_y = ''
 let g:airline_section_error = ''
 let g:airline_section_warning = ''
-" }}}
-"
-" NerdTree {{{
-let NERDTreeShowHidden=1                " show hidden files in NERDtree
 " }}}
 "
 "
