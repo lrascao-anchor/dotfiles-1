@@ -19,6 +19,9 @@ popd > /dev/null
 # This allows git-completion to work properly
 autoload -U compinit && compinit
 
+# Enable zmv command
+autoload -U zmv
+
 export PROMPT_COMMAND="history -a;"$PROMPT_COMMAND
 
 # GO configuration
