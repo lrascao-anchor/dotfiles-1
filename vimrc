@@ -9,6 +9,9 @@ if empty(glob('~/.vim/autoload/plug.vim'))
     endif
 "  }}}
 "
+" Global {{{
+set nocompatible        " don't bother trying to pretend you're vi
+" }}}
 "
 " Colors {{{
 syntax enable			" enable syntax highlighting
