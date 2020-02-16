@@ -27,6 +27,9 @@ export PROMPT_COMMAND="history -a;"$PROMPT_COMMAND
 # GO configuration
 export GOPATH=$HOME/Projects/go
 
+# Rust configuration
+RUST_PATH=$HOME/.cargo
+
 # set gnu tools ahead in the path so they are used instead of the mac ones
 # the following vars are an optimization, instead of calling the brew command
 # which is really slow
@@ -35,8 +38,9 @@ GNU_COREUTILS=/usr/local/opt/coreutils
 # $(brew --prefix gnu-getopt) 
 GNU_GETOPT=/usr/local/opt/gnu-getopt
 BREW_OPENSSH=/usr/local/opt/openssh
+MONO_FRAMEWORK=/Library/Frameworks/Mono.framework/Versions/Current
 
-export PATH=~/bin:/usr/local/bin:$GNU_COREUTILS/libexec/gnubin:$GNU_GETOPT/bin:$HOME/.cargo/bin:$BREW_OPENSSH/bin:$PATH:$GOROOT/bin:$GOPATH/bin
+export PATH=~/bin:/usr/local/bin:$GNU_COREUTILS/libexec/gnubin:$GNU_GETOPT/bin:$HOME/.cargo/bin:$BREW_OPENSSH/bin:$PATH:$GOROOT/bin:$RUST_PATH/bin:$GOPATH/bin:$MONO_FRAMEWORK/bin
 # add git-cheat to path
 export PATH=$PATH:`pwd`/git-cheat
 
