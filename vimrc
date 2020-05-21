@@ -25,6 +25,7 @@ set background=dark
 "
 "  Misc {{{
 set backspace=indent,eol,start	" makes backspace work like in other programs
+set wildignore=.git,.git/*
 "  }}}
 "
 " Spaces & Tabs {{{
@@ -89,6 +90,10 @@ set incsearch               " search as characters are entered
 set hlsearch                " highlight all matches
 set smartcase               " When searching try to be smart about cases 
 nnoremap <leader><space> :nohlsearch<CR>
+" This rewires n and N to do the highlighing...
+highlight WhiteOnRed ctermbg=red ctermfg=white
+nnoremap <silent> n   n:call HLNext(0.2)<cr>
+nnoremap <silent> N   N:call HLNext(0.2)<cr>
 " }}}
 "
 " Folding {{{
@@ -170,6 +175,15 @@ endif
 " Misc {{{
 " no delays, timeoutlen is used for mapping delays, and ttimeoutlen is used for key code delays
 set timeoutlen=300 ttimeoutlen=0
+"====[ Open any file with a pre-existing swapfile in readonly mode "]=========
+" augroup NoSimultaneousEdits
+"     autocmd!
+"     autocmd SwapExists * let v:swapchoice = 'o'
+"     autocmd SwapExists * echomsg ErrorMsg
+"     autocmd SwapExists * echo 'Duplicate edit session (readonly)'
+"     autocmd SwapExists * echohl None
+"     autocmd SwapExists * sleep 2
+" augroup END
 " }}}
 "
 " Plugins below
@@ -230,3 +244,17 @@ function! Toggle_Surround(char)
     call cursor(pos[1], pos[2]+len(a:char))
   endif
 endfunction
+
+" highlight next match
+" OR ELSE just highlight the match in red...
+function! HLNext (blinktime)
+    let [bufnum, lnum, col, off] = getpos('.')
+    let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
+    let target_pat = '\c\%#\%('.@/.'\)'
+    let ring = matchadd('WhiteOnRed', target_pat, 101)
+    redraw
+    exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
+    call matchdelete(ring)
+    redraw
+endfunction
+
