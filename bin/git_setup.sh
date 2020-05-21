@@ -22,7 +22,7 @@ git config --global alias.s \
 git config --global alias.co \
 	"checkout"
 
-git config --global core.editor "sublime -w"
+git config --global core.editor "vim"
 
 # Set git to use the osxkeychain credential helper
 git config --global credential.helper osxkeychain

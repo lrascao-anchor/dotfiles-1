@@ -62,12 +62,6 @@ setopt HIST_EXPIRE_DUPS_FIRST  # allow dups, but expire old ones when I hit HIST
 setopt EXTENDED_HISTORY        # save timestamp and runtime information
 setopt no_share_history        # do not share history between terminal windows
 
-# miniclip specific settings and paths
-if [ -f ~/.minicliprc ];
-then
-	source ~/.minicliprc
-fi
-
 # load up oh-my-zsh again
 source $ZSH/oh-my-zsh.sh
 
