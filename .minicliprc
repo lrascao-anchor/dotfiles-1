@@ -7,7 +7,7 @@ export PATH=/Developer/NVIDIA/CUDA-5.5/bin:$PATH
 export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-5.5/lib:$DYLD_LIBRARY_PATH
 
 # activate the erlang version
-. ~/Projects/erlang/19.3/activate
+. ~/Projects/erlang/21.3.8.4-dtrace/activate
 
 case $ITERM_SESSION_ID in
   w0t0p0)

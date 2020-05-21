@@ -9,19 +9,19 @@ git clone --quiet https://github.com/0xAX/git-cheat.git utils/git-cheat
 git clone --quiet https://github.com/robbyrussell/oh-my-zsh.git utils/oh-my-zsh
 
 # zsh-syntax-highlighting
-git clone --quiet https://github.com/zsh-users/zsh-syntax-highlighting.git
+git clone --quiet https://github.com/zsh-users/zsh-syntax-highlighting.git utils/zsh-syntax-highlighting
 
 # zsh-history-substring-search
-git clone --quiet https://github.com/zsh-users/zsh-history-substring-search.git
+git clone --quiet https://github.com/zsh-users/zsh-history-substring-search.git utils/zsh-history-substring-search
 
 # zsh autosugestions
-git clone --quiet https://github.com/tarruda/zsh-autosuggestions
+git clone --quiet https://github.com/tarruda/zsh-autosuggestions utils/zsh-autosuggestions
 
 # Easy building and installing of Erlang/OTP instances
-git clone --quiet https://github.com/yrashk/kerl.git
+git clone --quiet https://github.com/yrashk/kerl.git utils/kerl
 
 # Additional completion definitions for Zsh
-git clone --quiet https://github.com/zsh-users/zsh-completions.git
+git clone --quiet https://github.com/zsh-users/zsh-completions.git utils/zsh-completions
 
 # https://unbalancedparentheses.github.io/gut/
 wget https://github.com/unbalancedparentheses/gut/raw/master/bin/gut
@@ -29,9 +29,9 @@ chmod +x ./gut
 sudo mv ./gut ~/bin
 
 # git flow
-git clone --quiet https://github.com/petervanderdoes/gitflow.git
+git clone --quiet https://github.com/petervanderdoes/gitflow.git utils/gitflow
 # git flow completion
-git clone --quiet https://github.com/bobthecow/git-flow-completion
+git clone --quiet https://github.com/bobthecow/git-flow-completion utils/git-flow-completion
 
 # zshell vim plugin
-git clone https://github.com/laurenkt/zsh-vimto.git
+git clone https://github.com/laurenkt/zsh-vimto.git utils/zsh-vimto
