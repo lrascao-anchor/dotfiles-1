@@ -1,0 +1,28 @@
+[color]
+	ui = auto
+[advice]
+	statusHints = false
+[diff]
+	mnemonicprefix = true
+[merge]
+	stat = true
+[core]
+	excludesfile = ~/.gitignore
+	editor = vim
+	abbrev = 8
+[alias]
+	ls = log --color --graph --pretty=format:'%Cred%h%Creset \t -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' \t --abbrev-commit
+	s = status
+	co = checkout
+[credential]
+	helper = osxkeychain
+[log]
+	abbrevCommit = yes
+[user]
+	name = Luis Rascao
+	email = luis.rascao@gmail.com
+	signingkey = 17193EA0647D7260
+[pager]
+	branch = false
+[commit]
+	gpgsign = true
