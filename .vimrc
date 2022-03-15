@@ -20,7 +20,7 @@ colorscheme peaksea		" located at ~/.vim/colors, other good ones, solarized, mol
 set termguicolors 		" terminal vim will use full 24-bit colors
 set background=dark
 " molokai: curl -fLo ~/.vim/colors/molokai.vim --create-dirs https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim
-" peaksea: curl -fLo ~/.vim/colors/molokai.vim --create-dirs https://raw.githubusercontent.com/vim-scripts/peaksea/master/colors/peaksea.vim
+" peaksea: curl -fLo ~/.vim/colors/peaksea.vim --create-dirs https://raw.githubusercontent.com/vim-scripts/peaksea/master/colors/peaksea.vim
 "  }}}
 "
 "  Misc {{{
@@ -48,7 +48,7 @@ set nocursorline          	" highlight current line
 set lazyredraw              " redraw only when we need to.
 set showmatch               " higlight matching parenthesis
 set mat=2                   " How many tenths of a second to blink when matching brackets
-set fillchars+=vert:┃       " Characters to fill the statuslines and vertical separators.
+set fillchars+=vert:\|       " Characters to fill the statuslines and vertical separators.
 set foldcolumn=1            " Add a bit extra margin to the left
 set encoding=utf8           " Set utf8 as standard encoding and en_US as the standard language
 set ffs=unix,dos,mac        " Use Unix as the standard file type

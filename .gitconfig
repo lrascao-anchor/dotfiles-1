@@ -14,14 +14,14 @@
 	ls = log --color --graph --pretty=format:'%Cred%h%Creset \t -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' \t --abbrev-commit
 	s = status
 	co = checkout
-[credential]
-	helper = osxkeychain
+; [credential]
+; 	helper = osxkeychain
 [log]
 	abbrevCommit = yes
 [user]
+	email = luis.rascao@anchorlabs.com
+	signingkey = 9454DA0F12CB1566
 	name = Luis Rascao
-	email = luis.rascao@gmail.com
-	signingkey = 17193EA0647D7260
 [pager]
 	branch = false
 [commit]

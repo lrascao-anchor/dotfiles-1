@@ -341,8 +341,6 @@ scrolling:
 #   - ~AppKeypad
 #   - AppKeypad
 key_bindings:
-  - { key: Paste,                   action: Paste                            }
-  - { key: Copy,                    action: Copy                             }
   - { key: C,        mods: Alt,     action: Copy                             }
   - { key: V,        mods: Alt,     action: Paste                            }
   - { key: L,        mods: Control, action: ClearLogNotice                   }
@@ -456,9 +454,11 @@ key_bindings:
   - { key: 41,       mods: Shift,         chars: "\x3E"                      }  # greater than sign
   - { key: 43,                            chars: "\x5C"                      }  # reverse solidus
   - { key: 43,       mods: Shift,         chars: "\x7C"                      }  # vertical line
+  - { key: 13,                            chars: "\x2B"                      }  # plus sign
   - { key: 13,       mods: Shift,         chars: "\x2A"                      }  # asterisk
-  - { key: LBracket,     mods: Alt,     chars: "\x5b"                        }  # left square bracket [
-  - { key: RBracket,     mods: Alt,     chars: "\x5d"                        }  # right square bracket ]
+  - { key: 40,                            chars: "\x7E"                      }  # tilde
+  # - { key: LBracket,     mods: Alt,     chars: "\x5b"                        }  # left square bracket [
+  # - { key: RBracket,     mods: Alt,     chars: "\x5d"                        }  # right square bracket ]
   - { key: RBracket, mods: Shift,   chars: "\u0060"                          }  # grave accent (`)
   - { key: Key2,     mods: Alt,     chars: "\u0040"                          }  # commercial (`)
 

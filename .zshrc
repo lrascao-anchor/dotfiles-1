@@ -25,7 +25,9 @@ autoload -U zmv
 export PROMPT_COMMAND="history -a;"$PROMPT_COMMAND
 
 # GO configuration
-export GOPATH=$HOME/Projects/go
+export GOROOT="$HOME/.go/current"
+export GOPATH="$HOME/go"
+export GOBIN="$HOME/go/bin"
 
 # Rust configuration
 RUST_PATH=$HOME/.cargo
@@ -40,7 +42,12 @@ BREW_OPENSSH=/usr/local/opt/openssh
 TEXINFO=/usr/local/opt/texinfo
 KREW_ROOT=$HOME/.krew
 
-export PATH=$TEXINFO/bin:~/bin:/usr/local/bin:$GNU_COREUTILS/libexec/gnubin:$GNU_GETOPT/bin:$HOME/.cargo/bin:$BREW_OPENSSH/bin:$PATH:$GOROOT/bin:$RUST_PATH/bin:$GOPATH/bin:$KREW_ROOT/bin
+# GCloud >297.0.1 needs a link to Python2
+# Ref: https://github.com/google-github-actions/setup-gcloud/issues/128
+export CLOUDSDK_PYTHON=/usr/bin/python2
+
+export PATH=~/utils/bin:~/bin:/usr/local/bin:$GNU_COREUTILS/libexec/gnubin:$GNU_GETOPT/bin:$HOME/.cargo/bin:$BREW_OPENSSH/bin:$PATH:$GOROOT/bin:$GOBIN:$RUST_PATH/bin:$MONO_FRAMEWORK/bin:/opt/google-cloud-sdk/bin
+
 # add git-cheat to path
 export PATH=$PATH:`pwd`/git-cheat
 
@@ -61,9 +68,6 @@ SAVEHIST=$HISTSIZE             # lines of history to maintain in history file.
 setopt HIST_EXPIRE_DUPS_FIRST  # allow dups, but expire old ones when I hit HISTSIZE
 setopt EXTENDED_HISTORY        # save timestamp and runtime information
 setopt no_share_history        # do not share history between terminal windows
-
-# target a specific erlang version
-source ~/Projects/erlang/21.3/activate
 
 # load up oh-my-zsh again
 source $ZSH/oh-my-zsh.sh
@@ -91,3 +95,6 @@ complete -F __start_kubectl k
 # Ref: https://github.com/google-github-actions/setup-gcloud/issues/128
 # export CLOUDSDK_PYTHON=/usr/bin/python2
 export CLOUDSDK_PYTHON_SITEPACKAGES=1
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/bin/terraform terraform

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+function am_i_crostini() {
+    if [ "$(uname -n)" = "penguin" ]; then
+        return 0
+    fi
+
+    return 1
+}
+
+if am_i_crostini; then
+    wl-paste
+else
+    xclip -selection clipboard -out
+fi
