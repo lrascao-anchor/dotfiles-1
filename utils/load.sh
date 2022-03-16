@@ -2,19 +2,6 @@
 # load liquidprompt
 source liquidprompt/liquidprompt
 
-# load up zsh-history-substring-search
-source ~/utils/zsh-history-substring-search/zsh-history-substring-search.zsh
-# bind UP and DOWN arrow keys
-zmodload zsh/terminfo
-bindkey "$terminfo[kcuu1]" history-substring-search-up
-bindkey "$terminfo[kcud1]" history-substring-search-down
-# bind P and N for EMACS mode
-bindkey -M emacs '^P' history-substring-search-up
-bindkey -M emacs '^N' history-substring-search-down
-# bind k and j for VI mode
-bindkey -M vicmd 'k' history-substring-search-up
-bindkey -M vicmd 'j' history-substring-search-down
-
 # add kerl to path
 export PATH=$PATH:~/utils/kerl
 # add kerl autocompletions
@@ -33,4 +20,14 @@ source ~/utils/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # add zshell vim integration
 source ~/utils/zsh-vimto/zsh-vimto.zsh
+
+# load up zsh-history-substring-search
+source ~/utils/zsh-history-substring-search/zsh-history-substring-search.zsh
+# bind UP and DOWN arrow keys
+zmodload zsh/terminfo
+# bindkey "$terminfo[kcuu1]" history-substring-search-up
+# bindkey "$terminfo[kcud1]" history-substring-search-down
+# bind k and j for VI mode
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
 

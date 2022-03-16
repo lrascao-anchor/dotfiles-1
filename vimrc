@@ -165,7 +165,7 @@ let g:netrw_winsize = 25        " file explorer width percentage
 if exists('$TMUX')
     let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
     let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-    set term=xterm-256color
+    " set term=xterm-256color
 else
     let &t_SI = "\<Esc>]50;CursorShape=1\x7"
     let &t_EI = "\<Esc>]50;CursorShape=0\x7"
@@ -198,6 +198,11 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tommcdo/vim-exchange'
+Plug 'rust-lang/rust.vim'
+Plug 'vim-syntastic/syntastic'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'elixir-editors/vim-elixir'
+Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()
 " }}}
 "
@@ -220,6 +225,37 @@ let g:airline_section_warning = ''
 nmap <silent> "" :call Toggle_Surround('"')<cr>
 nmap <silent> '' :call Toggle_Surround('''')<cr>
 " }}}
+"
+"
+" syntastic {{{
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+" }}}
+"
+"
+" rust.vim {{{
+let g:syntastic_rust_checkers = ['cargo']
+" }}}
+"
+"
+" vim-simple-complete {{{
+set complete-=t
+set complete-=i
+" }}}
+"
+"
+" ctrlp {{{
+let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<C-e>'],
+    \ 'AcceptSelection("t")': ['<Cr>'],
+    \}
+" }}}
+"
 "
 " Helper functions
 "
