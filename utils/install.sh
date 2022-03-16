@@ -23,11 +23,6 @@ git clone --quiet https://github.com/yrashk/kerl.git utils/kerl
 # Additional completion definitions for Zsh
 git clone --quiet https://github.com/zsh-users/zsh-completions.git utils/zsh-completions
 
-# https://unbalancedparentheses.github.io/gut/
-wget https://github.com/unbalancedparentheses/gut/raw/master/bin/gut
-chmod +x ./gut
-sudo mv ./gut ~/bin
-
 # git flow
 git clone --quiet https://github.com/petervanderdoes/gitflow.git utils/gitflow
 # git flow completion

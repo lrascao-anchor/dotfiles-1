@@ -87,3 +87,7 @@ KEYTIMEOUT=1
 source <(kubectl completion zsh)
 complete -F __start_kubectl k
 
+# GCloud >297.0.1 needs a link to Python2
+# Ref: https://github.com/google-github-actions/setup-gcloud/issues/128
+# export CLOUDSDK_PYTHON=/usr/bin/python2
+export CLOUDSDK_PYTHON_SITEPACKAGES=1

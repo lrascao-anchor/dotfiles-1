@@ -59,20 +59,20 @@ window:
 # Font configuration (changes require restart)
 font:
   # The normal (roman) font face to use.
-  normal:
-    family: Monaco
+  #  normal:
+  #  family: Monaco
     # Style can be specified to pick a specific face.
     # style: Regular
 
   # The bold font face
-  bold:
-    family: Monaco
+  #bold:
+  #  family: Monaco
     # Style can be specified to pick a specific face.
     # style: Bold
 
   # The italic font face
-  italic:
-    family: Monaco
+  #italic:
+  #  family: Monaco
     # Style can be specified to pick a specific face.
     # style: Italic
 
@@ -178,7 +178,7 @@ bell:
   duration: 0
 
 # Background opacity
-background_opacity: 1.0
+window.opacity: 1.0
 
 # Mouse bindings
 #
@@ -343,6 +343,8 @@ scrolling:
 key_bindings:
   - { key: Paste,                   action: Paste                            }
   - { key: Copy,                    action: Copy                             }
+  - { key: C,        mods: Alt,     action: Copy                             }
+  - { key: V,        mods: Alt,     action: Paste                            }
   - { key: L,        mods: Control, action: ClearLogNotice                   }
   - { key: L,        mods: Control, chars: "\x0c"                            }
   - { key: Home,     mods: Alt,     chars: "\x1b[1;3H"                       }
@@ -447,14 +449,18 @@ key_bindings:
   - { key: J,        mods: Control, chars: "\x1bOB"                          }
   - { key: K,        mods: Control, chars: "\x1bOA"                          }
   - { key: L,        mods: Control, chars: "\x1bOC"                          }
-  - { key: Back,     mods: Command, chars: "\x1b\x7f"                        }  # delete entire line
-  - { key: LBracket,     mods: Alt|Shift,     chars: "\x7B"                  }  # left curly bracket {
-  - { key: RBracket,     mods: Alt|Shift,     chars: "\x7D"                  }  # right curly bracket }
+  - { key: 111,                     chars: "\x1b\x7f"                        }  # delete entire line
+  - { key: 9,        mods: Alt|Shift,     chars: "\x7B"                      }  # left curly bracket {
+  - { key: 10,       mods: Alt|Shift,     chars: "\x7D"                      }  # right curly bracket }
+  - { key: 41,                            chars: "\x3C"                      }  # less than sign
+  - { key: 41,       mods: Shift,         chars: "\x3E"                      }  # greater than sign
+  - { key: 43,                            chars: "\x5C"                      }  # reverse solidus
+  - { key: 43,       mods: Shift,         chars: "\x7C"                      }  # vertical line
+  - { key: 13,       mods: Shift,         chars: "\x2A"                      }  # asterisk
   - { key: LBracket,     mods: Alt,     chars: "\x5b"                        }  # left square bracket [
   - { key: RBracket,     mods: Alt,     chars: "\x5d"                        }  # right square bracket ]
   - { key: RBracket, mods: Shift,   chars: "\u0060"                          }  # grave accent (`)
   - { key: Key2,     mods: Alt,     chars: "\u0040"                          }  # commercial (`)
-  # - { key: 39,              chars: "~"                                     }  # tilde (~)
 
   # - { key: V,        mods: Command, action: Paste                        }
   # - { key: C,        mods: Command, action: Copy                         }
