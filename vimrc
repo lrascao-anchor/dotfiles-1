@@ -203,6 +203,7 @@ Plug 'vim-syntastic/syntastic'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'elixir-editors/vim-elixir'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'jjo/vim-cue'
 call plug#end()
 " }}}
 "
