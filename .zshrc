@@ -51,6 +51,12 @@ export PATH=~/utils/bin:~/bin:/usr/local/bin:$GNU_COREUTILS/libexec/gnubin:$GNU_
 # add git-cheat to path
 export PATH=$PATH:`pwd`/git-cheat
 
+# add git-machete to path
+export PATH=$PATH:$HOME/.local/bin
+
+# add istioctl to PATH
+export PATH=$HOME/.istioctl/bin:$PATH
+
 export MANPATH=$GNU_COREUTILS/libexec/gnuman:$MANPATH
 
 # for awscli to work
@@ -98,3 +104,7 @@ export CLOUDSDK_PYTHON_SITEPACKAGES=1
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/terraform terraform
+
+# Disable this Husky pre-commit nonsense
+export HUSKY_SKIP_HOOKS=1
+
