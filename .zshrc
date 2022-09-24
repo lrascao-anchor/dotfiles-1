@@ -101,6 +101,7 @@ complete -F __start_kubectl k
 # Ref: https://github.com/google-github-actions/setup-gcloud/issues/128
 # export CLOUDSDK_PYTHON=/usr/bin/python2
 export CLOUDSDK_PYTHON_SITEPACKAGES=1
+export CLOUDSDK_PYTHON=/usr/local/bin/python3
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/terraform terraform
