@@ -1,5 +1,9 @@
 
 # load liquidprompt
+# -1 - never show the hostname
+LP_HOSTNAME_ALWAYS=-1
+# 0 - show the username, except when the user is the login user
+LP_USER_ALWAYS=0
 source liquidprompt/liquidprompt
 
 # add kerl to path
