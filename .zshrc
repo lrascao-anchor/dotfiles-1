@@ -46,7 +46,7 @@ KREW_ROOT=$HOME/.krew
 # Ref: https://github.com/google-github-actions/setup-gcloud/issues/128
 export CLOUDSDK_PYTHON=/usr/bin/python2
 
-export PATH=~/utils/bin:~/bin:~/.local/bin:/usr/local/bin:$GNU_COREUTILS/libexec/gnubin:$GNU_GETOPT/bin:$HOME/.cargo/bin:$BREW_OPENSSH/bin:$PATH:$GOROOT/bin:$RUST_PATH/bin:$MONO_FRAMEWORK/bin:/opt/google-cloud-sdk/bin
+export PATH=~/utils/bin:~/bin:~/.local/bin:/usr/local/bin:$GNU_COREUTILS/libexec/gnubin:$GNU_GETOPT/bin:$HOME/.cargo/bin:$BREW_OPENSSH/bin:$PATH:$GOBIN:$GOROOT/bin:$RUST_PATH/bin:$MONO_FRAMEWORK/bin:/opt/google-cloud-sdk/bin
 
 # add git-cheat to path
 export PATH=$PATH:`pwd`/git-cheat
