@@ -1,0 +1,15 @@
+alias dir='exa -liaF -s name --color=auto'
+alias g='git'
+alias h='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`'
+alias ll='ls -lisaF --color=auto'
+alias k='kubectl'
+
+alias a='cd ~/go/src/github.com/anchorlabsinc/anchorage'
+alias t='cd ~/go/src/github.com/anchorlabsinc/anchorage/source/go/service/trading'
+alias r='cd ~/go/src/github.com/anchorlabsinc/anchorage/source/go/service/risk'
+alias fe-client="cd ~/go/src/github.com/anchorlabsinc/anchorage/source/js/client-dashboard/"
+alias lib='cd ~/go/src/github.com/anchorlabsinc/anchorage/source/go/lib'
+
+alias gcloud-auth='gcloud auth application-default login; gcloud auth login; gcloud auth configure-docker'
+alias gcloud-workstation-start='gcloud compute instances start "luis-rascao-workstation"'
+alias gcloud-workstation-ssh='gcloud compute ssh --zone "europe-west2-a" "luis-rascao-workstation"  --tunnel-through-iap --project "anchorage-workstations" --ssh-flag="-X"'

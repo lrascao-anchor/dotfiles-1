@@ -1,4 +1,6 @@
 *~
 .DS_Store
-bin/sublime
-bin/gut
+.alacritty.yml
+.alias
+.gitconfig
+.zshrc
