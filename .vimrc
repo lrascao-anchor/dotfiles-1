@@ -20,7 +20,7 @@ colorscheme peaksea		" located at ~/.vim/colors, other good ones, solarized, mol
 set termguicolors 		" terminal vim will use full 24-bit colors
 set background=dark
 " molokai: curl -fLo ~/.vim/colors/molokai.vim --create-dirs https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim
-" peaksea: curl -fLo ~/.vim/colors/molokai.vim --create-dirs https://raw.githubusercontent.com/vim-scripts/peaksea/master/colors/peaksea.vim
+" peaksea: curl -fLo ~/.vim/colors/peaksea.vim --create-dirs https://raw.githubusercontent.com/vim-scripts/peaksea/master/colors/peaksea.vim
 "  }}}
 "
 "  Misc {{{
