@@ -30,3 +30,7 @@ git clone --quiet https://github.com/bobthecow/git-flow-completion utils/git-flo
 
 # zshell vim plugin
 git clone https://github.com/laurenkt/zsh-vimto.git utils/zsh-vimto
+
+# git machete cli completion
+mkdir -p utils/oh-my-zsh/custom/plugins/git-machete/
+curl -L https://raw.githubusercontent.com/VirtusLab/git-machete/master/completion/git-machete.completion.zsh -o utils/oh-my-zsh/custom/plugins/git-machete/git-machete.plugin.zsh
