@@ -14,6 +14,7 @@
 	ls = log --color --graph --pretty=format:'%Cred%h%Creset \t -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' \t --abbrev-commit
 	s = status
 	co = checkout
+    	m = machete
 [credential]
 	helper = osxkeychain
 [log]
