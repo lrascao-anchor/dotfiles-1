@@ -2,26 +2,122 @@
 	ui = auto
 [advice]
 	statusHints = false
+	detachedHead = false
 [diff]
 	mnemonicprefix = true
+	algorithm = patience
+	renames = copies
+	noprefix = true
+	wsErrorHighlight = all
 [merge]
 	stat = true
 [core]
 	excludesfile = ~/.gitignore
-	editor = vim
+	editor = nvim
 	abbrev = 8
+	attributesfile = /home/luis_rascao_anchorlabs_com/.gitattributes
+	pager = diff-so-fancy | less --tabs=4 -RFX
 [alias]
 	ls = log --color --graph --pretty=format:'%Cred%h%Creset \t -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' \t --abbrev-commit
 	s = status
 	co = checkout
-    	m = machete
+    m = machete
+	st = status
+	sts = status --short --branch
+	rp = rev-parse
+	rpa = rev-parse --abbrev-ref
+	br = branch
+	brv = branch --verbose --verbose
+	bra = branch --all
+	brav = branch --all --verbose --verbose
+	brm = branch --move
+	brmf = branch --move --force
+	brd = branch --delete
+	brdf = branch --delete --force
+	sb = show-branch
+	sba = show-branch --all
+	lg = log --pretty=compact --graph
+	lgo = log --pretty=compact --graph -n 1
+	lgm = !sh -c 'git log --pretty=compact --graph ^master \"${@:-HEAD}\"' -
+	lgs = log --pretty=compact --graph --branches --simplify-by-decoration
+	lf = log --pretty=fuller --decorate
+	lfo = log --pretty=fuller --decorate -n 1
+	lfm = !sh -c 'git log --pretty=fuller --decorate ^master \"${@:-HEAD}\"' -
+	rmc = rm --cached
+	rmcf = rm --cached --force
+	sh = stash
+	shl = stash list
+	shs = stash save
+	shw = stash show --patch
+	sha = stash apply
+	shp = stash pop
+	shd = stash drop
+	shc = stash clear
+	ci = commit
+	cia = commit --amend
+	ciar = commit --amend --reset-author
+	cian = commit --amend --no-edit
+	cianr = commit --amend --no-edit --reset-author
+	cob = checkout -b
+	cobf = checkout -B
+	cod = checkout --detach
+	com = checkout master
+	cor = !sh -c 'git checkout -B \"${1:?unset}\" \"origin//home/luis_rascao_anchorlabs_com/dotfiles/dotfiles.install.log\"' -
+	corm = checkout -B master origin/master
+	hard = !sh -c 'git reset --hard \"${@:-HEAD}\"' -
+	soft = !sh -c 'git reset --soft \"${@:-HEAD}\"' -
+	cp = cherry-pick
+	cpc = cherry-pick --continue
+	cpa = cherry-pick --abort
+	fe = fetch
+	fet = fetch --tags
+	fea = fetch --all
+	feat = fetch --all --tags
+	rb = rebase
+	rbm = rebase master
+	rbi = rebase --interactive
+	rbim = rebase --interactive master
+	rbc = rebase --continue
+	rbs = rebase --skip
+	rba = rebase --abort
+	df = diff
+	dfc = diff --cached
+	dfo = !sh -c 'git diff \"${1:-HEAD}\"~ \"${@:-HEAD}\"' -
+	dfs = diff --stat
+	dfsc = diff --stat --cached
+	dfso = !sh -c 'git diff --stat \"${1:-HEAD}\"~ \"${@:-HEAD}\"' -
+	dfsm = !sh -c 'git diff --stat \"$(git merge-base master \"${1:-HEAD}\")\" \"${@:-HEAD}\"' -
+	dfp = difftool --tool=pdiff
+	dfpc = difftool --tool=pdiff --cached
+	dfpo = !sh -c 'git difftool --tool=pdiff \"${1:-HEAD}\"~ \"${@:-HEAD}\"' -
+	dfpm = !sh -c 'git difftool --tool=pdiff $(git merge-base master \"${1:-HEAD}\")\" \"${@:-HEAD}\"' -
+	fadd = !sh -c 'git fzf status-unstaged git add \"$@\" --' -
+	fco = !sh -c 'git fzf status-unstaged git checkout \"$@\" --' -
+	freset = !sh -c 'git fzf status git reset \"$@\" --' -
+	fbco = !sh -c 'git fzf branch git checkout \"$@\"' -
+	trace = !sh -c 'GIT_TRACE=1 git \"$@\"' -
+	prum = pull --rebase upstream master
+	cleanup = !sh -c 'git co master >&2 && git pull && git branch --merged | grep -v master | xargs -n 1 git branch -d && git remote prune origin || git remote prune origin'
+	sno = show --name-only
+	dc = diff --cached
+	ad = add -u
+	branches = !git for-each-ref --sort='-authordate:iso8601' --format=' %(color:green)%(authordate:iso8601)%09%(color:white)%(refname:short)' refs/heads
+	prs = !sh -c 'hub pr list -f \"%i %au (updated: %ur) %Creset %t% l%n\"'
+	prs-by = !sh -c 'unbuffer git prs' | grep
+	pr-info = "!f(){ hub pr show -f \"%pC%i(%pS)%Creset  %t%  l%n%B <- %H (url: %U) %nbody:%n%b\" $1; }; f"
+	prs-ready = !sh -c 'gh pr list -l ready-to-merge'
+	prs-conflict = !sh -c 'gh pr list -l conflict'
+	prs-priority = !sh -c 'gh pr list -l high-priority'
+	prs-security = !sh -c 'gh pr list  -l security'
+	conflicts = diff --name-only --diff-filter=U
 [credential]
 	helper = osxkeychain
 [log]
 	abbrevCommit = yes
+	date = iso
 [user]
 	name = Luis Rascao
-    email = luis.rascao@anchorlabs.com
+	email = luis.rascao@anchorlabs.com
 	signingkey = 9454DA0F12CB1566
 [pager]
 	branch = false
@@ -29,3 +125,24 @@
 	gpgsign = true
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[grep]
+	lineNumber = true
+[difftool]
+	prompt = false
+	trustExitCode = true
+[difftool "pdiff"]
+	cmd = pdiff -- \"$LOCAL\" \"$REMOTE\" | less -R
+[fetch]
+	prune = true
+[pull]
+	rebase = true
+[push]
+	default = current
+[color "status"]
+	branch = cyan
+[pretty]
+	compact = %C(auto)%h %C(blue)%ad %C(magenta)%aN%C(auto)%d %C(reset)%s
+[diff "json"]
+	textconv = cat \"$1\" | json_pp --json_opt=canonical,pretty
+[interactive]
+	diffFilter = diff-so-fancy --patch

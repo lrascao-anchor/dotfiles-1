@@ -25,7 +25,7 @@ autoload -U zmv
 export PROMPT_COMMAND="history -a;"$PROMPT_COMMAND
 
 # GO configuration
-export GOROOT="$HOME/.go/current"
+export GOROOT="$HOME/.go"
 export GOPATH="$HOME/go"
 export GOBIN="$GOPATH/bin"
 
@@ -86,10 +86,6 @@ source $ZSH/oh-my-zsh.sh
 
 # test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-# activate ESC trigger for zsh-vimto, this needs to be at the very end
-# after everything else has been loaded
-# bindkey -v
-
 # 10ms for key sequences
 KEYTIMEOUT=1
 
@@ -108,4 +104,8 @@ complete -o nospace -C /usr/bin/terraform terraform
 
 # Disable this Husky pre-commit nonsense
 export HUSKY_SKIP_HOOKS=1
+
+# activate ESC trigger for zsh-vimto, this needs to be at the very end
+# after everything else has been loaded
+# bindkey -v
 
